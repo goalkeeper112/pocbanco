@@ -1,0 +1,19 @@
+<template id="" name="viewTicket">
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Ticket: </h3>
+
+      {{#each ticket}}
+        <div class="content">
+          <div class="text-center">
+            {{> QrCode text=_id }}
+          </div>
+          <br>
+          <p><strong>Codigo:</strong> <b class="label label-success">{{_id}}</b></p>
+          <p><strong>Monto:</strong> <b class="label label-info">{{amount}}</b></p>
+          <p><strong>Expira en:</strong> <b class="label label-warning">{{dateExpire }}</b></p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

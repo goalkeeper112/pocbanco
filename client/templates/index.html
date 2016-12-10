@@ -1,0 +1,23 @@
+<template name="index">
+  <div class="container">
+    <div class="jumbotron">
+      <div class="content">
+        <div class="row">
+          <div class="text-center">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <br>
+          {{#if currentUser}}
+            <div class="col-xs-12">
+              <a href="/wallet/operations" class="btn btn-success col-xs-12">Operaciones</a>
+            </div>
+          {{else}}
+            <div class="col-xs-12 text-center" style="margin:0 auto 0 auto;">
+              <a href="/users/login" class="btn btn-success col-xs-12">Entrar</a>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

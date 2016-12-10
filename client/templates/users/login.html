@@ -1,0 +1,10 @@
+<template name="login">
+  <div class="container">
+    {{#if atDisabled}}
+     Please wait...
+    {{/if}}
+    <div class="{{atClass}}">
+     {{> atForm}}
+    </div>
+  </div>
+</template>

@@ -1,0 +1,47 @@
+<template id="" name="depositConfirm">
+  <div class="container">
+
+        <div class="jumbotron">
+          <h3 class="page-header text-center">Depositos:</h3>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  ID
+                </th>
+                <th>
+                  Monto
+                </th>
+                <th>
+                  Estatus
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each deposits}}
+                <tr>
+                  <th>
+                    {{_id}}
+                  </th>
+                  <td>
+                    {{amount}}
+                  </td>
+                  <td>
+                    {{#if confirmed}}
+                      <label class="label label-success">Confirmado</label>
+                    {{else}}
+                      {{#if isAdmin}}
+                        <a href="#" id="confirm" class="label label-danger">Por Confirmar</a>
+                      {{else}}
+                        Por Confirmar
+                      {{/if}}
+                    {{/if}}
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+  </div>
+</template>

@@ -1,0 +1,54 @@
+<template id="" name="walletSend">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Escanear qr wallet</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            {{> qrScanner}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Enviar Dinero</h3>
+
+      <div class="content">
+        <p><strong>Wallet ID:</strong> <b>{{address}}</b></p>
+        <h4>Balance: <b>{{balance}}</b></h4>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-md-5">
+            <div class="form-group has-feedback">
+              <label class="control-label">Wallet ID <a href="#" id="qr-open" class="btn btn-primary" onclick="$('#myModal').modal()">escanear <i class="glyphicon glyphicon-qrcode"></i></a></label>
+              <input type="text" id="address" value="" class="form-control" />
+
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label>Monto a Enviar</label>
+              <input type="number" step="1" min="100" max="{{balance}}" id="amount" value="" class="form-control">
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="col-xs-12">
+            <button class="btn btn-warning col-xs-12 text-center" id="sendMoney">Pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

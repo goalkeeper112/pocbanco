@@ -1,0 +1,15 @@
+<template id="" name="tickets">
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Tickets:</h3>
+
+      <div class="container">
+        <ul>
+          {{#each tickets}}
+            <li><a href="/wallet/tickets/view/{{_id}}">Ticket: {{_id}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

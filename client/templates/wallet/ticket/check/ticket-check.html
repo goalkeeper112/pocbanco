@@ -1,0 +1,49 @@
+<template name="ticketCheck">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Escanear Ticket</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            {{> qrScanner}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Wallet: {{currentUser._id}}</h3>
+
+      <div class="content">
+
+        <a href="#" id="qr-open" class="btn btn-primary col-xs-12" onclick="$('#myModal').modal()">Consultar Ticket <i class="glyphicon glyphicon-qrcode"></i></a>
+
+        <br><br><br>
+
+        <div class="form-group">
+          <label>Ticket ID</label>
+          <input type="text" id="ticketID" disabled class="form-control col-xs-12" value="{{ticketID}}">
+        </div>
+
+        <div class="form-group">
+          <label>Balance</label>
+          <input type="number" id="ticketBalance" disabled class="form-control col-xs-12" value="{{ticketValue}}">
+        </div>
+
+        {{#if ticketExist}}
+          <div class="text-center">
+            <a href="/wallet/tickets/claim/{{ticketID}}" class="btn btn-primary">Reclamar</a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

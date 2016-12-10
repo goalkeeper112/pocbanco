@@ -1,0 +1,13 @@
+<template id="" name="walletReceive">
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Recibir Efectivo Digital</h3>
+
+      <div class="content text-center">
+        {{> QrCode text=currentUser._id }}
+        <h2>Wallet:</h2> <b>{{address}}</b>
+        <h3>Balance:</h3> <b>{{balance}}</b>
+      </div>
+    </div>
+  </div>
+</template>

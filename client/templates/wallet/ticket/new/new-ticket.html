@@ -1,0 +1,50 @@
+<template id="" name="newTicket">
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Nuevo Ticket</h3>
+
+      <div class="container">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label>Monto</label>
+            <input type="number" step="1" min="100" id="amount" value="" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="password" value="" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Fecha Limite</label>
+            <input type="date" id="dateExpire" value="" class="form-control">
+          </div>
+
+          <div class="text-center">
+            <a href="#" id="createTicket" class="btn btn-warning">Crear Ticket</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{#if ticket}}
+      <div class="jumbotron">
+        <div class="content text-center">
+          {{> QrCode text=ticket }}
+          <h2>Codigo:</h2> <b>{{ticket}}</b>
+        </div>
+      </div>
+    {{/if}}
+
+    <div class="container">
+      <div class="col-xs-6">
+        <a href="/wallet/tickets" class="btn btn-primary col-xs-12 text-center">Tickets</a>
+      </div>
+
+      <div class="col-xs-6">
+        <a href="/wallet/tickets/check" class="btn btn-primary col-xs-12 text-center">Reclamar</a>
+      </div>
+    </div>
+
+  </div>
+</template>

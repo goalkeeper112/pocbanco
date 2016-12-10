@@ -1,0 +1,75 @@
+<template id="" name="walletDeposit">
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Depositar Efectivo Digital</h3>
+
+      <div class="content">
+        <div class="container">
+          <div class="form-group">
+            <label>Número de cuenta</label>
+            <input type="number" id="account" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Monto</label>
+            <input type="number" id="amount" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Referencia o Número de Deposito</label>
+            <input type="number" id="reference" class="form-control">
+          </div>
+
+          <hr>
+
+          <div class="text-center">
+            <a href="#" id="createDeposit" class="btn btn-primary col-xs-12">Depositar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <h3 class="page-header text-center">Depositos:</h3>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              ID
+            </th>
+            <th>
+              Monto
+            </th>
+            <th>
+              Estatus
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each deposits}}
+            <tr>
+              <th>
+                {{_id}}
+              </th>
+              <td>
+                {{amount}}
+              </td>
+              <td>
+                {{#if confirmed}}
+                  Confirmado
+                {{else}}
+                  {{#if isAdmin}}
+                    <a href="/wallet/deposits/view/{{_id}}">Por Confirmar</a>
+                  {{else}}
+                    Por Confirmar
+                  {{/if}}
+                {{/if}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
