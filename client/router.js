@@ -20,6 +20,7 @@ FlowRouter.subscriptions = function() {
 };
 
 FlowRouter.route('/', {
+    name: 'index',
     action: function(params) {
       setTimeout(() => {
         if(Meteor.user()){
@@ -32,6 +33,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/users/login', {
+    name: 'enter',
     action: function(params) {
       setTimeout(() => {
         if(Meteor.user()){

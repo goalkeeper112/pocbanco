@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background-color: #032563;">
+<body style="background-color: #3471ED;">
   <nav class="navbar navbar-default ">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -15,14 +15,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Efectivo Digital</a>
+              <a class="navbar-brand" href="#">TuEfectivo</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                   <li><a href="/">Inicio</a></li>
                   {{#if currentUser}}
                     <li><a href="/wallet/operations">Operaciones</a></li>
-                    <li><a href="#" onclick="Meteor.logout()">Salir</a></li>
+                    <li><a href="#" onclick="Meteor.logout() && FlowRouter.go('index')">Salir</a></li>
                   {{else}}
                     <li><a href="/wallet/create">Entrar</a></li>
                   {{/if}}
@@ -31,7 +31,8 @@
       </div>
   </nav>
 
-  <div class="container center-block" id="main">
+  <div class="center-block">
+
     {{> Template.dynamic template=main}}
   </div>
 </body>
